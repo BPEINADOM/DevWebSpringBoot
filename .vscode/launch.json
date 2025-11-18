@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EjerciciotaxiApplication<ejerciciotaxi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.edu.udec.ejerciciotaxi.EjerciciotaxiApplication",
+            "projectName": "ejerciciotaxi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
