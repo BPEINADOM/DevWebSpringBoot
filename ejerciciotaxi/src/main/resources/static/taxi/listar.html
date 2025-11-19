@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Carreras</title>
+</head>
+<body>
+
+<h2>Carreras Registradas</h2>
+
+<button onclick="cargar()">Cargar carreras</button>
+
+<table border="1" width="100%" id="tablaCarreras">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Taxista</th>
+            <th>Taxi</th>
+            <th>Kilómetros</th>
+            <th>Precio</th>
+            <th>Duración</th>
+            <th>Pasajeros</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<br>
+<a href="/home.html">Volver al menú</a>
+
+<script>
+function cargar() {
+
+    fetch("/carreras/list")
+        .then(r => r.json())
+        .then(data => {
+            const tbody = document.querySelector("#tablaCarreras tbody");
+            tbody.innerHTML = "";
+
+            data.forEach(c => {
+                const fila = `
+                    <tr>
+                        <td>${c.id}</td>
+                        <td>${c.cliente.nombre}</td>
+                        <td>${c.taxista.nombre}</td>
+                        <td>${c.taxi.placa}</td>
+                        <td>${c.kilometros.valor}</td>
+                        <td>${c.precio.valor}</td>
+                        <td>${c.duracion.valor}</td>
+                        <td>${c.cantidadPasajeros}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += fila;
+            });
+        });
+}
+</script>
+
+</body>
+</html>
