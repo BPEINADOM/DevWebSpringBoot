@@ -34,14 +34,13 @@ public class CarreraController {
         this.listarCarreras = listarCarreras;
     }
 
+    // POST desde crear.html
     @PostMapping(value = "/crear", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     public String crearCarrera(CarreraForm form) {
 
         Cliente cliente = new Cliente(UUID.randomUUID().toString(), form.getCliente());
-
         Taxi taxi = new Taxi(form.getPlacaTaxi(), form.getModeloTaxi());
-
         Taxista taxista = new Taxista(UUID.randomUUID().toString(), form.getNombreTaxista());
 
         CarreraTaxi carrera = new CarreraTaxi(
@@ -63,6 +62,7 @@ public class CarreraController {
                 + "<a href='/carreras/listar.html'>Volver</a>";
     }
 
+    // Consumido por listar.html vía fetch()
     @GetMapping("/list")
     @ResponseBody
     public List<CarreraTaxi> listar() {

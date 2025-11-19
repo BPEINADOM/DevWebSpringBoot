@@ -1,5 +1,6 @@
 package co.edu.udec.ejerciciotaxi.core.domain.vo;
 
+import lombok.Getter;
 import lombok.Value;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Value;
  */
 
 @Value
+@Getter
 public class DuracionMinutos {
     int value;
 

@@ -1,7 +1,6 @@
 package co.edu.udec.ejerciciotaxi.adapter.web.controller;
 
 import java.util.UUID;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,8 +45,12 @@ public class UsuarioController {
     public String loginUser(String id, String clave) {
         boolean ok = login.login(id, clave);
 
-        return ok
-                ? "<h2>Login correcto</h2><a href='/home.html'>Continuar</a>"
-                : "<h2>Credenciales inválidas</h2><a href='/usuarios/login.html'>Volver</a>";
+        if (ok) {
+            return "<h2>Login correcto</h2>"
+                    + "<a href='/home.html'>Continuar</a>";
+        }
+
+        return "<h2>Credenciales inválidas</h2>"
+                + "<a href='/usuarios/login.html'>Volver</a>";
     }
 }

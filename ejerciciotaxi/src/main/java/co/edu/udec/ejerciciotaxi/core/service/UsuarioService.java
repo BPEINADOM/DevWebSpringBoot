@@ -1,5 +1,7 @@
 package co.edu.udec.ejerciciotaxi.core.service;
 
+import org.springframework.stereotype.Service;
+
 import co.edu.udec.ejerciciotaxi.core.domain.usuario.Usuario;
 import co.edu.udec.ejerciciotaxi.core.port.in.usuario.GestionUsuarioUseCase;
 import co.edu.udec.ejerciciotaxi.core.port.in.usuario.LoginUsuarioUseCase;
@@ -12,6 +14,7 @@ import co.edu.udec.ejerciciotaxi.core.port.out.usuario.UsuarioRepository;
  * Contiene las reglas de negocio de login, logout, etc.
  */
 
+@Service
 public class UsuarioService implements
         GestionUsuarioUseCase,
         LoginUsuarioUseCase,

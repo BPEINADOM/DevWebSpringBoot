@@ -2,6 +2,8 @@ package co.edu.udec.ejerciciotaxi.core.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import co.edu.udec.ejerciciotaxi.core.domain.taxi.CarreraTaxi;
 import co.edu.udec.ejerciciotaxi.core.port.in.taxi.BuscarCarreraUseCase;
 import co.edu.udec.ejerciciotaxi.core.port.in.taxi.CrearCarreraUseCase;
@@ -13,6 +15,7 @@ import co.edu.udec.ejerciciotaxi.core.port.out.taxi.CarreraTaxiRepository;
  * Se implementan los puertos de entrada y salida.
  */
 
+@Service
 public class CarreraTaxiService implements
         CrearCarreraUseCase,
         BuscarCarreraUseCase,

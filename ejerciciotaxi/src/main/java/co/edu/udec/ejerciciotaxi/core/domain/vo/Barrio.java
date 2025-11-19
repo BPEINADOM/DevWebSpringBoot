@@ -1,11 +1,13 @@
 package co.edu.udec.ejerciciotaxi.core.domain.vo;
 
+import lombok.Getter;
 import lombok.Value;
 
 /**
  * Value Object que encapsula un nombre del barrio.
  */
 
+@Getter
 @Value
 public class Barrio {
     String nombre;
